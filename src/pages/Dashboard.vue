@@ -29,26 +29,7 @@
 
 
       <div class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50" >
-        <chart-card
-          :cardVideo="cardVideo2"
-          data-background-color="blue"
-        >
-          <template slot="content">
-            <h4 class="title">Lojas</h4>
-            <p class="category">
-              <span class="text-success">{{numLojas}}</span>
-              inscritas
-            </p>
-          </template>
-
-          <template slot="footer">
-            <div style="width:100%; text-align: right">
-              <router-link to="/lojas">
-                <md-button class="md-raised md-primary">Editar</md-button>
-              </router-link>
-            </div>
-          </template>
-        </chart-card>
+        
       </div>
 
 
@@ -120,18 +101,6 @@ export default {
     OrderedTable*/
   },
   props: {
-    cardVideo1: {
-      type: String,
-      default: require("@/assets/videos/vokoscreen-2019-09-19_08-25-43.mp4")
-    },
-    cardVideo2: {
-      type: String,
-      default: require("@/assets/videos/vokoscreen-2019-09-19_12-47-23.mp4")
-    },
-    cardVideo3: {
-      type: String,
-      default: require("@/assets/videos/vokoscreen-2019-09-19_12-48-30.mp4")
-    },
   },
   data() {
     return {

@@ -8,8 +8,11 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
-  "proxy":"https://demo2697181.mockable.io/",
+  "proxy": "https://demo2697181.mockable.io/",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "@fortawesome/vue-fontawesome": "^0.1.7",
     "axios": "^0.19.0",
     "vue": "2.6.10",
     "vue-axios": "^2.1.4",
