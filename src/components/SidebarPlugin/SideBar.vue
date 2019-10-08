@@ -2,7 +2,6 @@
   <div
     class="sidebar"
     :data-color="activeColor"
-    :data-image="backgroundImage"
     :style="sidebarStyle"
   >
     <div class="logo">
@@ -10,14 +9,6 @@
         <div class="logo-img">
           <img :src="imgLogo" alt="" />
         </div>
-      </a>
-
-      <a
-        href="https://www.creative-tim.com/product/vue-material-dashboard"
-        target="_blank"
-        class="simple-text logo-normal"
-      >
-        {{ title }}
       </a>
     </div>
     <div class="sidebar-wrapper">
@@ -48,10 +39,6 @@ export default {
     title: {
       type: String,
       default: "Au Au Help"
-    },
-    backgroundImage: {
-      type: String,
-      default: require("@/assets/img/sidebar-2.jpg")
     },
     imgLogo: {
       type: String,

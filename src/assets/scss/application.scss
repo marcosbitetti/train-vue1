@@ -103,12 +103,96 @@
 
 
 
+// @bitetti
+$colors: (
+  headerBG: #f7f7f7,
+  headerIcons: #555,
+  headerBGHighlight: #e6e6e6,
+  headerIconsHighlight: #555,
+  headerTextHighlight: #922,
+);
+
+$logoWidth: 150px;
+$userMenuHeight: 1.5rem;
+
+.user-menu {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: $userMenuHeight;
+}
+
+
 
 .sidebar {
+  top: $userMenuHeight;
+  background: map-get($colors,headerBG);
+
+  &:after {
+    display: none;
+  }
+
+  p {
+    text-transform: uppercase;
+  }
+
   @media (min-width: 992px) {
     $sideBarHeight: 96px;
     bottom: $sideBarHeight;
     height: $sideBarHeight;
     width: 100vw;
+
+    .logo {
+      padding: 0;
+    }
+
+    .sidebar-wrapper {
+      width: calc(100vw - #{$logoWidth});
+    }
+
+    .md-list {
+      flex-flow: row nowrap;
+      margin-top: 0px;
+      min-width: 100%;
+      align-items: center;
+      justify-content: space-around;
+      height: $sideBarHeight;
+
+      li {
+        float: left;
+        height: 100%;
+
+        a {
+          box-shadow: none !important;
+          height: 100%;
+        }
+
+        .md-list-item-content {
+          flex-flow: column wrap;
+          .md-icon {
+            display: block;
+            margin: 0px !important;
+            font-size: 250% !important;
+          }
+          p,.md-icon {
+            color: map-get($colors,headerIcons) !important;
+          }
+        }
+
+        .active {
+          >div {
+            border-radius: 0;
+            background: map-get($colors,headerBGHighlight) !important;
+            .md-icon {
+              color: map-get($colors,headerIconsHighlight) !important;
+            }
+            p {
+              color: map-get($colors,headerTextHighlight) !important;
+            }
+          }
+        }
+      }
+    }
   }
 }
