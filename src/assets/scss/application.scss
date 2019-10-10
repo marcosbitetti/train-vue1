@@ -110,10 +110,15 @@ $colors: (
   headerBGHighlight: #e6e6e6,
   headerIconsHighlight: #555,
   headerTextHighlight: #922,
+  topMenuBG: #444,
+  paragraph: #f7f7f7,
+  configColor: #999,
 );
 
 $logoWidth: 150px;
 $userMenuHeight: 1.5rem;
+$sideBarHeight: 82px;
+
 
 .user-menu {
   position: fixed;
@@ -123,9 +128,75 @@ $userMenuHeight: 1.5rem;
   height: $userMenuHeight;
 }
 
+.topmenu {
+  background: map-get($colors,topMenuBG);
+  position: fixed;
+  z-index: 3;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  height: $userMenuHeight;
+
+  time {
+    color: map-get($colors,paragraph);
+    position: absolute;
+    left: 1rem;
+    top: 0;
+  }
+
+  .user-menu {
+    display: flex;
+    position: absolute;
+    left: 72px;
+    right: 72px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+
+    .md-button {
+      min-height: 0;
+      max-height: $userMenuHeight;
+      width: 160px;
+      padding: 0;
+      background: transparent !important;
+      .md-ripple {
+        padding: 0 !important;
+        height: $userMenuHeight !important;
+        width: 100%;
+      }
+      .md-button-content {
+        svg {
+          margin-left: 12px;
+        }
+      }
+    }
+  }
+
+  .config {
+    position: absolute;
+    right: 1rem;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    background: transparent !important;
+    box-shadow: none;
+    height: 100%;
+    min-width: 12px;
+    max-width: 52px;
+
+    .md-ripple {
+      padding: 0 !important;
+    }
+
+    svg {
+      color: map-get($colors,configColor);
+    }
+  }
+}
 
 
 .sidebar {
+  z-index: 2;
   top: $userMenuHeight;
   background: map-get($colors,headerBG);
 
@@ -138,7 +209,6 @@ $userMenuHeight: 1.5rem;
   }
 
   @media (min-width: 992px) {
-    $sideBarHeight: 96px;
     bottom: $sideBarHeight;
     height: $sideBarHeight;
     width: 100vw;
@@ -166,16 +236,18 @@ $userMenuHeight: 1.5rem;
         a {
           box-shadow: none !important;
           height: 100%;
+          margin: 0;
+          min-width: 80px;
         }
 
         .md-list-item-content {
           flex-flow: column wrap;
-          .md-icon {
+          .md-icon,svg {
             display: block;
             margin: 0px !important;
             font-size: 250% !important;
           }
-          p,.md-icon {
+          p,.md-icon,svg {
             color: map-get($colors,headerIcons) !important;
           }
         }
@@ -194,5 +266,18 @@ $userMenuHeight: 1.5rem;
         }
       }
     }
+  }
+}
+
+.md-toolbar-row {
+  display: none;
+}
+
+.main-panel {
+  @media (min-width: 992px) {
+    background: red;
+    position: absolute;
+    top: calc(#{$sideBarHeight} + #{$userMenuHeight});
+    width: 100%;
   }
 }

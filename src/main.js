@@ -16,6 +16,9 @@ import Notifications from "./components/NotificationPlugin";
 // MaterialDashboard plugin
 import MaterialDashboard from "./material-dashboard";
 
+require('./assets/FontAwesome');
+require('./filters/dateFormat');
+
 // configure router
 const router = new VueRouter({
   routes, // short for routes: routes

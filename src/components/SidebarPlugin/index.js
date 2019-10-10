@@ -1,5 +1,6 @@
 import Sidebar from "./SideBar.vue";
 import SidebarLink from "./SidebarLink.vue";
+import TopMenu from "../TopMenu.vue";
 
 const SidebarStore = {
   showSidebar: false,
@@ -25,6 +26,7 @@ const SidebarPlugin = {
     });
     Vue.component("side-bar", Sidebar);
     Vue.component("sidebar-link", SidebarLink);
+    Vue.component("top-menu", TopMenu);
   }
 };
 
